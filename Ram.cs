@@ -1,3 +1,5 @@
+using System;
+
 namespace Garage
 {
     public class Ram : Vehicle  // Gas powered truck
@@ -7,6 +9,11 @@ namespace Garage
         public void RefuelTank()
         {
             // method definition omitted
+        }
+
+        public override void Drive()
+        {
+            Console.WriteLine($"The {MainColor} Ram growls at you. Rruuuuuuummmmmble!");
         }
     }
 }

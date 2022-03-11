@@ -1,3 +1,5 @@
+using System;
+
 namespace Garage
 {
     public class Tesla : Vehicle
@@ -7,6 +9,11 @@ namespace Garage
         public void ChargeBattery()
         {
             // method definition omitted
+        }
+
+        public override void Drive()
+        {
+            Console.WriteLine($"The {MainColor} blazes by you. Bbbbbbrrrrrr!");
         }
     }
 }
