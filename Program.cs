@@ -58,19 +58,42 @@ namespace Garage
 
             /***********************************************/
 
-            Cessna mx410 = new Cessna()
+            Cessna cessna150 = new Cessna()
             {
                 MainColor = "White",
                 MaximumOccupancy = 2,
-                FuelCapacity = 25
+                FuelCapacity = 25,
+                CurrentTankPercentage = 50
             };
 
-            Ram ram1500 = new Ram()
+            Ram ram = new Ram()
             {
                 MainColor = "Silver",
                 MaximumOccupancy = 5,
-                FuelCapacity = 26
+                FuelCapacity = 26,
+                CurrentTankPercentage = 60
             };
+
+            List<IGasVehicle> gasVehicles = new List<IGasVehicle>() {
+                ram, cessna150
+             };
+
+            Console.WriteLine("Gas Vehicles");
+            foreach (IGasVehicle gv in gasVehicles)
+            {
+                Console.WriteLine($"{gv.CurrentTankPercentage}");
+            }
+
+            foreach (IGasVehicle gv in gasVehicles)
+            {
+                // This should completely refuel the gas tank
+                gv.RefuelTank();
+            }
+
+            foreach (IGasVehicle gv in gasVehicles)
+            {
+                Console.WriteLine($"{gv.CurrentTankPercentage}");
+            }
 
             fxs.Drive();
             fxs.Turn("right");
@@ -80,13 +103,13 @@ namespace Garage
             modelS.Turn("right");
             modelS.Stop();
 
-            mx410.Drive();
-            mx410.Turn("right");
-            mx410.Stop();
+            cessna150.Drive();
+            cessna150.Turn("right");
+            cessna150.Stop();
 
-            ram1500.Drive();
-            ram1500.Turn("right");
-            ram1500.Stop();
+            ram.Drive();
+            ram.Turn("right");
+            ram.Stop();
 
 
 
