@@ -15,5 +15,10 @@ namespace Garage
         {
             Console.WriteLine($"The {MainColor} Zero zips by you. Yeeoooooow!");
         }
+
+        public override void Stop()
+        {
+            Console.WriteLine($"The {MainColor} Zero gently rolls to a stop.");
+        }
     }
 }

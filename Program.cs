@@ -35,9 +35,23 @@ namespace Garage
             };
 
             fxs.Drive();
+            fxs.Turn("right");
+            fxs.Stop();
+
             modelS.Drive();
+            modelS.Turn("right");
+            modelS.Stop();
+
             mx410.Drive();
+            mx410.Turn("right");
+            mx410.Stop();
+
             ram1500.Drive();
+            ram1500.Turn("right");
+            ram1500.Stop();
+
+
+
         }
     }
 }

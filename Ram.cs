@@ -15,5 +15,10 @@ namespace Garage
         {
             Console.WriteLine($"The {MainColor} Ram growls at you. Rruuuuuuummmmmble!");
         }
+
+        public override void Stop()
+        {
+            Console.WriteLine($"The {MainColor} Ram gently rolls to a stop.");
+        }
     }
 }
