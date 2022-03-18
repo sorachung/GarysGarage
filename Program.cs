@@ -8,6 +8,16 @@ namespace Garage
     {
         static void Main(string[] args)
         {
+            var gasStation = new GasStation()
+            {
+                Capacity = 4
+            };
+
+            var batteryStation = new BatteryStation()
+            {
+                Capacity = 4
+            };
+
             Zero fxs = new Zero()
             {
                 MainColor = "Midnight Blue",
@@ -45,11 +55,13 @@ namespace Garage
                 Console.WriteLine($"{ev.CurrentChargePercentage}");
             }
 
-            foreach (IElectricVehicle ev in electricVehicles)
-            {
-                // This should charge the vehicle to 100%
-                ev.ChargeBattery();
-            }
+            // foreach (IElectricVehicle ev in electricVehicles)
+            // {
+            //     // This should charge the vehicle to 100%
+            //     ev.ChargeBattery();
+            // }
+
+            batteryStation.Refuel(electricVehicles);
 
             foreach (IElectricVehicle ev in electricVehicles)
             {
@@ -84,11 +96,13 @@ namespace Garage
                 Console.WriteLine($"{gv.CurrentTankPercentage}");
             }
 
-            foreach (IGasVehicle gv in gasVehicles)
-            {
-                // This should completely refuel the gas tank
-                gv.RefuelTank();
-            }
+            // foreach (IGasVehicle gv in gasVehicles)
+            // {
+            //     // This should completely refuel the gas tank
+            //     gv.RefuelTank();
+            // }
+
+            gasStation.Refuel(gasVehicles);
 
             foreach (IGasVehicle gv in gasVehicles)
             {
